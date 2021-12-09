@@ -1,0 +1,21 @@
+profit and loss
+
+selling_price = float(input("enter selling price"))
+cost_price = float(input("enter cost price"))
+profit=selling_price-cost_price
+if profit > 0:
+    print("profit of product =",profit)
+    profit_percentage=(profit/cost_price)*100
+    print("profit percentage of produc =",profit_percentage,"%")
+else:
+    print("loss =",abs(profit))
+
+calculation of cricles
+
+radius=float(input("enter the value of radius"))
+area=3.14*radius*radius
+perimeter=2*3.14*radius
+area_format="{:.2f}".format(area)
+perimeter_format="{:.2f}".format(perimeter)
+print("Area of circle =",area_format)
+print("perimeter of circle =",perimeter_format)
