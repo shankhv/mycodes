@@ -1,0 +1,43 @@
+class salary:
+    def __init__(self,basic_salary):
+        self.basic_salary = basic_salary
+        self.hra = 0
+        self.da = 0
+        self.spl_allowance=0
+        self.gross=0
+        self.pf=0
+        self.tax=0
+        self.deduction=0
+        self.net_salary=0        
+    
+    def calculations(self):
+        self.hra = self.basic_salary * 0.35
+        self.da = self.basic_salary * 0.12
+        self.spl_allowance = self.basic_salary * 0.25
+        self.gross=self.spl_allowance+self.hra+self.da
+        self.pf=self.basic_salary*0.0833
+        
+        if( self.gross > 0 and self.gross < 35001):
+            self.tax=self.gross*0.05
+        elif( self.gross > 35000  and self.gross < 60001):
+            self.tax=self.gross*0.08
+        else:
+            self.tax=self.gross*0.11
+            
+        self.deduction = self.pf + self.tax
+        self.net_salary = self.gross - self.deduction
+        
+    def display(self):
+        self.calculations()
+        print ('GROSS OF OF THE BASIC SALARY IS = ',self.gross)
+        print ('TOTAL DEDUCATION OF THE BASIC SALARY IS  = ',self.deduction)
+        print("NET SALARY OF THE BASIC SALARY IS = ",self.net_salary)
+
+print ('_________________________START_____________________________') 
+basic_salary=int(input("enter the basic salary = "))
+s = salary(basic_salary)     
+s.display()       
+
+print ('__________________________STOP______________________________')               
+
+ 
